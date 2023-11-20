@@ -93,7 +93,7 @@ void HandleOpts(int argc, char const *argv[]) {
 
 int main(int argc, char const *argv[]) {
 
-  genie::Messenger::Instance()->SetPrioritiesFromXmlFile("Messenger_whisper.xml");
+  genie::Messenger::Instance()->SetPrioritiesFromXmlFile("Messenger_laconic.xml"); // quiet mode
 
   HandleOpts(argc, argv);
   if (!cliopts::fclname.size()) {
@@ -190,6 +190,19 @@ int main(int argc, char const *argv[]) {
         const systtools::paramId_t& pid = v.pid;
         const double& CVw = v.CV_response;
         const std::vector<double>& ws = v.responses;
+
+        std::ostringstream oss;
+        oss << "- ParamID:" << pid << ": RW values = {";
+        if (!ws.empty()) {
+          oss << ws[0];
+          for (size_t i = 1; i < ws.size(); ++i) {
+            oss << ", " << ws[i];
+          }
+        }
+        oss << "}";
+        std::cout << oss.str() << std::endl;
+
+
       } // END resp loop
 
       // UPDATE RECORD HERE
