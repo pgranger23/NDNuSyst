@@ -79,3 +79,12 @@ make install -j4
 ## Now set environmental varaibles
 export PATH=${mywd}/ndnusyst/build/Linux/bin:${PATH}
 ```
+
+## Test run
+```
+# update caf (NDNuSyst/test/run_update.sh)
+UpdateReweight -c ${fclName} -i ${InputFile} -o ${OutputFile} -N 1
+# read updated caf
+ReadCAF -i ${OutputFile}
+```
+
