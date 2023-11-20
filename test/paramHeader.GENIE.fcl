@@ -1,0 +1,52 @@
+generated_systematic_provider_configuration: {
+   GENIEReWeight_NDCAF: {
+      MFP_N: {
+         centralParamValue: 0
+         paramVariations: [
+            -1,
+            1,
+            -2,
+            2,
+            -3,
+            3
+         ]
+         prettyName: "MFP_N"
+         systParamId: 1
+      }
+      MFP_pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -1,
+            1,
+            -2,
+            2,
+            -3,
+            3
+         ]
+         prettyName: "MFP_pi"
+         systParamId: 0
+      }
+      instance_name: "NDCAF"
+      parameter_headers: [
+         "MFP_pi",
+         "MFP_N"
+      ]
+      tool_options: {
+         AxFFCCQEDipoleToZExp: false
+         CCRESIsShapeOnly: false
+         DISBYIsShapeOnly: false
+         MaCCQEIsShapeOnly: false
+         NCRESIsShapeOnly: false
+         UseFullHERG: false
+         evgen_list_name: ""
+         fill_valid_tree: false
+         genie_tune_name: "${GENIE_XSEC_TUNE}"
+         ignore_parameter_dependence: true
+      }
+      tool_type: "GENIEReWeight"
+   }
+   syst_providers: [
+      "GENIEReWeight_NDCAF"
+   ]
+}
+
