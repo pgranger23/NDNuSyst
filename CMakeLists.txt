@@ -20,7 +20,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "")
   set(CMAKE_BUILD_TYPE DebWithRelInfo)
 endif()
 
-find_package(nusystematics 23.06 REQUIRED)
+find_package(nusystematics 02.00.01 REQUIRED)
 find_package(duneanaobj 03.02.01 REQUIRED)
 find_package(GENIE3 REQUIRED)
 if(NOT TARGET GENIE3::All)
@@ -40,7 +40,7 @@ install(TARGETS ndnusyst_dependencies EXPORT ndnusyst-targets)
 
 add_subdirectory(app)
 
-install(EXPORT nusyst-targets
+install(EXPORT ndnusyst-targets
         NAMESPACE ndnusyst::
         DESTINATION lib/cmake/ndnusyst)
 

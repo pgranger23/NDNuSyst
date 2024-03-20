@@ -74,7 +74,7 @@ int main(int argc, char const *argv[]) {
 
   // Input file
   TFile *f_input = new TFile(cliopts::input_filename.c_str());
-
+/*
   // Global tree
   TTree *t_input_global = (TTree *)f_input->Get("globalTree");
   caf::SRGlobal* srglobal = nullptr;
@@ -84,7 +84,7 @@ int main(int argc, char const *argv[]) {
   for(auto sp:srglobal->wgts.params){
     printf("- (id, name, nshifts) = (%d, %s, %d)\n", sp.id, sp.name.c_str(), sp.nshifts);
   }
-
+*/
   // CAF tree
   TTree *t_input_caf = (TTree *)f_input->Get("cafTree");
   size_t NEvs = t_input_caf->GetEntries();
